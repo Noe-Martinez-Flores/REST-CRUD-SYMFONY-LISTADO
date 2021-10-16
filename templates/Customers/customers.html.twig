@@ -1,0 +1,62 @@
+{% extends('base.html.twig') %}
+
+{% block title %}
+
+<title>Customers</title>
+
+{% endblock %}
+
+{% block stylesheets %} ... {% endblock %}
+{% block body %} <h1>Customers</h1>
+    <table class = "table table-hover"> 
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>customerNumber </th>
+                <th>customerName</th>
+                <th>contactLastName    </th>
+                <th>contactFirstName </th>
+                <th>addressLine1  </th>
+                <th>addressLine2</th>
+                <th>city </th>
+                <th>state </th>
+                <th>postalCode </th>
+                <th>country </th>
+                <th>creditLimit  </th>
+                <th>Editar  </th>
+                <th>Eliminar  </th>
+
+            </tr>
+        </thead>
+        <tbody>
+            {% for customers in lista %}
+                <tr>
+                    <td>{{ loop.index }}</td>
+                    <td>{{ customers.customerNumber }}</td>
+                    <td>{{ customers.customerName }}</td>
+                    <td>{{ customers.contactLastName  }}</td>
+                    <td>{{ customers.contactFirstName }}</td>
+                    <td>{{ customers.addressLine1  }}</td>
+                    <td>{{ customers.addressLine2  }}</td>
+                    <td>{{ customers.city  }}</td>
+                    <td>{{ customers.state  }}</td>
+                    <td>{{ customers.postalCode  }}</td>
+                    <td>{{ customers.country  }}</td>
+                    <td>{{ customers.creditLimit  }}</td>
+            
+                    <td>
+                        <button class="btn btn-outline-warning">Editar</button>
+                        
+                        
+                    </td>
+                    <td>
+                        
+                        <button class="btn btn-outline-danger">Eliminar</button>
+                        
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+{% endblock %}

@@ -1,0 +1,44 @@
+{% extends('base.html.twig') %}
+
+{% block title %}
+
+<title>Payments</title>
+
+{% endblock %}
+
+{% block stylesheets %} ... {% endblock %}
+{% block body %} <h1>Payments</h1>
+    <table class = "table table-hover"> 
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>checkNumber</th>
+                
+                <th>amount</th>
+                <th>Editar</th>
+                <th>Eliminar</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for payments in lista %}
+                <tr>
+                    <td>{{loop.index}}</td>
+                    <td>{{ payments.checkNumber }}</td>
+    
+                    <td>{{ payments.amount }}</td>
+                    <td>
+                        <button class="btn btn-outline-warning">Editar</button>
+                        
+                        
+                    </td>
+                    <td>
+                        
+                        <button class="btn btn-outline-danger">Eliminar</button>
+                        
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+{% endblock %}

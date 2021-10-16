@@ -1,0 +1,52 @@
+{% extends('base.html.twig') %}
+
+{% block title %}
+
+<title>Employees</title>
+
+{% endblock %}
+
+{% block stylesheets %} ... {% endblock %}
+{% block body %} <h1>Employees</h1>
+    <table class = "table table-hover"> 
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>employeeNumber </th>
+                <th>lastName </th>
+                <th>firstName     </th>
+                <th>extension  </th>
+                <th>email   </th>
+                <th>jobTitle  </th>
+                <th>Editar  </th>
+                <th>Eliminar  </th>
+
+            </tr>
+        </thead>
+        <tbody>
+            {% for employee in lista %}
+                <tr>
+                    <td>{{ loop.index }}</td>
+                    <td>{{ employee.employeeNumber }}</td>
+                    <td>{{ employee.lastName }}</td>
+                    <td>{{ employee.firstName  }}</td>
+                    <td>{{ employee.extension }}</td>
+                    <td>{{ employee.email  }}</td>
+                    <td>{{ employee.jobTitle  }}</td>
+                    
+                    <td>
+                        <button class="btn btn-outline-warning">Editar</button>
+                        
+                        
+                    </td>
+                    <td>
+                        
+                        <button class="btn btn-outline-danger">Eliminar</button>
+                        
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+{% endblock %}

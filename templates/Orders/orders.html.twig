@@ -1,0 +1,45 @@
+{% extends('base.html.twig') %}
+
+{% block title %}
+
+<title>Orders</title>
+
+{% endblock %}
+
+{% block stylesheets %} ... {% endblock %}
+{% block body %} <h1>Orders</h1>
+    <table class = "table table-hover"> 
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>orderNumber</th>
+                <th>status</th>
+                <th>comments</th>
+                <th>Editar</th>
+                <th>Eliminar</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for orders in lista %}
+                <tr>
+                    <td>{{loop.index}}</td>
+                    <td>{{ orders.orderNumber }}</td>
+                    <td>{{ orders.status }}</td>
+                    <td>{{ orders.comments }}</td>
+                    
+                    <td>
+                        <button class="btn btn-outline-warning">Editar</button>
+                        
+                        
+                    </td>
+                    <td>
+                        
+                        <button class="btn btn-outline-danger">Eliminar</button>
+                        
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+{% endblock %}

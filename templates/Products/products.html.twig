@@ -1,0 +1,55 @@
+{% extends('base.html.twig') %}
+
+{% block title %}
+
+<title>Products</title>
+
+{% endblock %}
+
+{% block stylesheets %} ... {% endblock %}
+{% block body %} <h1>Produts</h1>
+    <table class = "table table-hover"> 
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>productCode  </th>
+                <th>productName  </th>
+                <th>productScale  </th>
+                <th>productVendor  </th>
+                <th>productDescription  </th>
+                <th>quantityInStock  </th>
+                <th>buyPrice </th>
+                <th>MSRP  </th>
+                <th>Editar </th>
+                <th>Eliminar </th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for products in lista %}
+                <tr>
+                    <td>{{loop.index}}</td>
+                    <td>{{ products.productCode }}</td>
+                    <td>{{ products.productName }}</td>
+                    <td>{{ products.productScale }}</td>
+                    <td>{{ products.productVendor }}</td>
+                    <td>{{ products.productDescription }}</td>
+                    <td>{{ products.quantityInStock }}</td>
+                    <td>{{ products.buyPrice }}</td>
+                    <td>{{ products.MSRP }}</td>
+                    
+                    <td>
+                        <button class="btn btn-outline-warning">Editar</button>
+                        
+                        
+                    </td>
+                    <td>
+                        
+                        <button class="btn btn-outline-danger">Eliminar</button>
+                        
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+{% endblock %}
